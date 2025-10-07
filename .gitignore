@@ -1,3 +1,17 @@
-# Godot 4+ specific ignores
+# Godot-specific
+.import/
+export.cfg
+export_presets.cfg
+
+# Godot 4: Caches and temporary files
+.cache/
 .godot/
-/android/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor settings
+*.tmp
+*.bak
+*.swp
