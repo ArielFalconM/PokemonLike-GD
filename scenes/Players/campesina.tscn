@@ -1,0 +1,145 @@
+[gd_scene format=3 uid="uid://3c0am4xdgtm"]
+
+[ext_resource type="PackedScene" uid="uid://crx5c4yj1ipev" path="res://scenes/player.tscn" id="1_prs6r"]
+[ext_resource type="Texture2D" uid="uid://cv1cknr1o1x2c" path="res://assets/Character/campesina.png" id="2_jyduj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grjo7"]
+atlas = ExtResource("2_jyduj")
+region = Rect2(0, 0, 60, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scmll"]
+atlas = ExtResource("2_jyduj")
+region = Rect2(60, 0, 60, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfv4q"]
+atlas = ExtResource("2_jyduj")
+region = Rect2(120, 0, 60, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cix4m"]
+atlas = ExtResource("2_jyduj")
+region = Rect2(180, 0, 60, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vy2e0"]
+atlas = ExtResource("2_jyduj")
+region = Rect2(0, 64, 60, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxgff"]
+atlas = ExtResource("2_jyduj")
+region = Rect2(60, 64, 60, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eof5a"]
+atlas = ExtResource("2_jyduj")
+region = Rect2(120, 64, 60, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awhf8"]
+atlas = ExtResource("2_jyduj")
+region = Rect2(180, 64, 60, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cf2nm"]
+atlas = ExtResource("2_jyduj")
+region = Rect2(0, 128, 60, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehspy"]
+atlas = ExtResource("2_jyduj")
+region = Rect2(60, 128, 60, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sq3k5"]
+atlas = ExtResource("2_jyduj")
+region = Rect2(120, 128, 60, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awkg2"]
+atlas = ExtResource("2_jyduj")
+region = Rect2(180, 128, 60, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5mfb"]
+atlas = ExtResource("2_jyduj")
+region = Rect2(0, 192, 60, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nn1w"]
+atlas = ExtResource("2_jyduj")
+region = Rect2(60, 192, 60, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2lv5"]
+atlas = ExtResource("2_jyduj")
+region = Rect2(120, 192, 60, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2b16v"]
+atlas = ExtResource("2_jyduj")
+region = Rect2(180, 192, 60, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xhtxm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grjo7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_scmll")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfv4q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cix4m")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vy2e0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxgff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eof5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awhf8")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cf2nm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehspy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sq3k5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awkg2")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5mfb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1nn1w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2lv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2b16v")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 6.0
+}]
+
+[node name="Campesina" unique_id=595248302 instance=ExtResource("1_prs6r")]
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=1377882559]
+sprite_frames = SubResource("SpriteFrames_xhtxm")
+animation = &"walk_down"

@@ -1,3 +1,20 @@
 [gd_scene format=3 uid="uid://brbm4iujie5a0"]
 
+[ext_resource type="PackedScene" uid="uid://d1jdcx8q1k6g8" path="res://scenes/Players/e_girl.tscn" id="1_nx2dv"]
+[ext_resource type="PackedScene" uid="uid://b264qc0i015jh" path="res://scenes/Players/mosquetero.tscn" id="2_ttagm"]
+[ext_resource type="PackedScene" uid="uid://3c0am4xdgtm" path="res://scenes/Players/campesina.tscn" id="3_0voj7"]
+[ext_resource type="PackedScene" uid="uid://b3a8mdo5sbap6" path="res://scenes/Players/potter_head.tscn" id="4_m02bm"]
+
 [node name="TileMapLayer" type="TileMapLayer" unique_id=1263414960]
+
+[node name="E-Girl" parent="." unique_id=595248302 instance=ExtResource("1_nx2dv")]
+position = Vector2(78, 95)
+
+[node name="Mosquetero" parent="." unique_id=1990522650 instance=ExtResource("2_ttagm")]
+position = Vector2(161, 208)
+
+[node name="Campesina" parent="." unique_id=1984475430 instance=ExtResource("3_0voj7")]
+position = Vector2(181, 103)
+
+[node name="Potter-Head" parent="." unique_id=487142642 instance=ExtResource("4_m02bm")]
+position = Vector2(68, 176)
