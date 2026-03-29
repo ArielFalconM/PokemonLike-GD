@@ -18,6 +18,10 @@ config/name="PokePeru"
 run/main_scene="uid://brbm4iujie5a0"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
+[debug]
+
+shapes/binding_modifiers/dpad_binding=false
+
 [input]
 
 move_right={
