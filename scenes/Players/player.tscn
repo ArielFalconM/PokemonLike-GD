@@ -15,3 +15,6 @@ shape = SubResource("CircleShape2D_u8vuu")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=975068075]
 zoom = Vector2(1.4, 1.4)
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=2042015113]
+target_position = Vector2(0, 16)

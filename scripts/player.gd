@@ -2,16 +2,20 @@ extends CharacterBody2D
 
 
 @export var walk_speed: float = 150.0
+var current_interactable = null
+
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var ray_cast: RayCast2D = $RayCast2D
 
 #Funcion que maneja el movimiento general del player.
 func _physics_process(delta: float) -> void:
 	var direction := get_input_direction()
 	
-	velocity = direction.normalized() * walk_speed
+	velocity = direction.normalized() * walk_speed * delta
 	move_and_slide()
 
 	update_animations(direction)
+	check_hover_interaction()
 	
 #Funcion que devuelve la direccion del player fozando entre 4 direcciones.
 func get_input_direction() -> Vector2:
@@ -33,12 +37,42 @@ func update_animations(dir: Vector2):
 		sprite.stop()
 		return
 	
-	# Elegir animación según el vector
+	#Apunta el RayCast a la direccion del player con modulo 1 bloque.
+	ray_cast.target_position = dir * 16
+	
+	# Elegir animación según direccion actual.
 	if dir.x > 0: sprite.play("walk_right")
 	elif dir.x < 0: sprite.play("walk_left")
 	elif dir.y > 0: sprite.play("walk_down")
 	elif dir.y < 0: sprite.play("walk_up")
 	
-	
-	
-	
+
+#Funcion que al RayCast detectar un cuerpo y el player interactue le pregunta al cuerpo si puede interactuar.
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("interact"):
+		if ray_cast.is_colliding():
+			var target = ray_cast.get_collider()
+			if target.has_method("interact"):
+				target.interact()
+		
+		
+func check_hover_interaction()->void:
+	if ray_cast.is_colliding():
+		var new_target = ray_cast.get_collider()
+
+		if new_target != current_interactable:  #Revisa si esta viendo algo nuevo o no.
+			
+			#Si esta viendo algo nuevo oculta el anterior y guarda el nuevo.
+			if current_interactable and current_interactable.has_method("unhighlight"):
+				current_interactable.unhighlight()
+				current_interactable = new_target
+
+			# Si el nuevo objeto es interactuable se lo revela.
+			if current_interactable.has_method("highlight"):
+				current_interactable.highlight()
+
+	else: # Si el RayCast no colisiona pero antes mirabamos algo lo oculta.
+		if current_interactable:
+			if current_interactable.has_method("unhighlight"):
+				current_interactable.unhighlight()
+			current_interactable = null
