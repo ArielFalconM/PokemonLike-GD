@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-@export var walk_speed: float = 150.0
+@export var walk_speed: float = 6000.0
 var current_interactable = null
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -56,22 +56,26 @@ func _unhandled_input(event: InputEvent) -> void:
 				target.interact()
 		
 		
-func check_hover_interaction()->void:
+func check_hover_interaction() -> void:
 	if ray_cast.is_colliding():
 		var new_target = ray_cast.get_collider()
 
-		if new_target != current_interactable:  #Revisa si esta viendo algo nuevo o no.
+		# Si el objeto que estamos viendo es distinto al que teníamos guardado...
+		if new_target != current_interactable:
 			
-			#Si esta viendo algo nuevo oculta el anterior y guarda el nuevo.
+			# 1. Al objeto viejo le decimos que se oculte (si existía)
 			if current_interactable and current_interactable.has_method("unhighlight"):
 				current_interactable.unhighlight()
-				current_interactable = new_target
+			
+			# 2. Guardamos el nuevo objeto como el "actual"
+			current_interactable = new_target
 
-			# Si el nuevo objeto es interactuable se lo revela.
+			# 3. Al nuevo objeto le decimos que se revele
 			if current_interactable.has_method("highlight"):
 				current_interactable.highlight()
 
-	else: # Si el RayCast no colisiona pero antes mirabamos algo lo oculta.
+	else: 
+		# Si el RayCast no toca nada, pero antes sí tocaba algo...
 		if current_interactable:
 			if current_interactable.has_method("unhighlight"):
 				current_interactable.unhighlight()
