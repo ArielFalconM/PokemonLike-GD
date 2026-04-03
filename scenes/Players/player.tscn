@@ -18,4 +18,5 @@ shape = SubResource("RectangleShape2D_rdywd")
 zoom = Vector2(1.4, 1.4)
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=2042015113]
+position = Vector2(0, 30)
 target_position = Vector2(0, 16)

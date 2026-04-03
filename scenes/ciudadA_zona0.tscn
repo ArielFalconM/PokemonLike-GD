@@ -10370,7 +10370,7 @@ rendering_quadrant_size = 32
 physics_quadrant_size = 32
 
 [node name="Potter-Head" parent="." unique_id=487142642 instance=ExtResource("4_m02bm")]
-position = Vector2(208, 464)
+position = Vector2(597, 237)
 
 [node name="Sign" parent="." unique_id=1990645201 instance=ExtResource("6_vat02")]
-position = Vector2(400, 274)
+position = Vector2(560, 272)
