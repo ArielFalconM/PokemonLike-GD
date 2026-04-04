@@ -10470,6 +10470,7 @@ collision_visibility_mode = 1
 physics_quadrant_size = 32
 
 [node name="Potter-Head" parent="." unique_id=487142642 instance=ExtResource("4_m02bm")]
+z_index = 0
 position = Vector2(527, 289)
 
 [node name="Sign" parent="." unique_id=1990645201 instance=ExtResource("6_vat02")]

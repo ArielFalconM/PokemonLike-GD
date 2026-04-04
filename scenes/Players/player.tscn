@@ -6,6 +6,8 @@
 radius = 14.0
 
 [node name="Player" type="CharacterBody2D" unique_id=595248302]
+z_index = 2
+y_sort_enabled = true
 script = ExtResource("1_3vyb7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=894337460]
