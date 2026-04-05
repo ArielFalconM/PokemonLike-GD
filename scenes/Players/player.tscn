@@ -3,11 +3,12 @@
 [ext_resource type="Script" uid="uid://2q7nwbfk0ndb" path="res://scripts/player.gd" id="1_3vyb7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rdywd"]
-radius = 14.0
+radius = 8.0
 
 [node name="Player" type="CharacterBody2D" unique_id=595248302]
 z_index = 2
 y_sort_enabled = true
+position = Vector2(0, 6)
 script = ExtResource("1_3vyb7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=894337460]
