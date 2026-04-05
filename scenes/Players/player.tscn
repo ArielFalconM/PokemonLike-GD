@@ -11,14 +11,14 @@ y_sort_enabled = true
 script = ExtResource("1_3vyb7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=894337460]
-position = Vector2(0, 30)
+position = Vector2(0, -15)
 shape = SubResource("CircleShape2D_rdywd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1377882559]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=975068075]
-zoom = Vector2(1.4, 1.4)
+zoom = Vector2(2, 2)
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=2042015113]
-position = Vector2(0, 30)
+position = Vector2(0, -15)
 target_position = Vector2(0, 16)

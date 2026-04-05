@@ -141,5 +141,6 @@ animations = [{
 [node name="Potter-Head" unique_id=595248302 instance=ExtResource("1_kp15h")]
 
 [node name="AnimatedSprite2D" parent="." index="1" unique_id=1377882559]
+position = Vector2(0, -48)
 sprite_frames = SubResource("SpriteFrames_m54f8")
 animation = &"walk_down"
