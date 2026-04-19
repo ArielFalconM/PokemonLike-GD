@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b264qc0i015jh"]
 
-[ext_resource type="PackedScene" uid="uid://crx5c4yj1ipev" path="res://scenes/player.tscn" id="1_14b5m"]
+[ext_resource type="PackedScene" uid="uid://crx5c4yj1ipev" path="res://scenes/Players/player.tscn" id="1_14b5m"]
 [ext_resource type="Texture2D" uid="uid://cbuio2d4jfobv" path="res://assets/Character/mosquetero.png" id="2_dijkx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3otgj"]
@@ -141,7 +141,6 @@ animations = [{
 [node name="Mosquetero" unique_id=595248302 instance=ExtResource("1_14b5m")]
 
 [node name="AnimatedSprite2D" parent="." index="1" unique_id=1377882559]
+position = Vector2(0, -33)
 sprite_frames = SubResource("SpriteFrames_32ndw")
-animation = &"walk_up"
-frame = 2
-frame_progress = 0.3413396
+animation = &"walk_down"

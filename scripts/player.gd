@@ -6,56 +6,56 @@ extends CharacterBody2D
 @export var walk_speed: float = 12000
 var current_interactable = null
 
-#var moving := false
-#var start_pos: Vector2
-#var target_pos: Vector2
-#var t := 0.0
-#var facing_dir := Vector2.DOWN
+var moving := false
+var start_pos: Vector2
+var target_pos: Vector2
+var t := 0.0
+var facing_dir := Vector2.DOWN
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var ray_cast: RayCast2D = $RayCast2D
 
 
-#func _physics_process(delta: float) -> void:
-#	var direction := get_input_direction()
-#	var collision = move_and_collide(direction * tile_size, true)
-#	
-#	if moving:
-#		t += delta / step_time
-#		global_position = start_pos.lerp(target_pos, t)
-#		if t >= 1.0:
-#			global_position = target_pos
-#			moving = false
-#		check_hover_interaction()
-#		return
-#
-		
-#	if direction == Vector2.ZERO:
-#		sprite.stop()
-#		check_hover_interaction()
-#		return
-#	facing_dir = direction
-#	update_animations(direction)
-#	start_pos = global_position
-#	target_pos = global_position + direction * tile_size
-	
-	
-#	if collision != null:
-#		check_hover_interaction()
-#		return
-#	moving = true
-#	t = 0.0
-#	check_hover_interaction()
-
-
 func _physics_process(delta: float) -> void:
 	var direction := get_input_direction()
+	var collision = move_and_collide(direction * tile_size, true)
 	
-	velocity = direction.normalized() * walk_speed * delta
-	move_and_slide()
+	if moving:
+		t += delta / step_time
+		global_position = start_pos.lerp(target_pos, t)
+		if t >= 1.0:
+			global_position = target_pos
+			moving = false
+		check_hover_interaction()
+		return
 
+		
+	if direction == Vector2.ZERO:
+		sprite.stop()
+		check_hover_interaction()
+		return
+	facing_dir = direction
 	update_animations(direction)
+	start_pos = global_position
+	target_pos = global_position + direction * tile_size
+	
+	
+	if collision != null:
+		check_hover_interaction()
+		return
+	moving = true
+	t = 0.0
 	check_hover_interaction()
+
+
+#func _physics_process(delta: float) -> void:
+#	var direction := get_input_direction()
+#	
+#	velocity = direction.normalized() * walk_speed * delta
+#	move_and_slide()
+
+#	update_animations(direction)
+#	check_hover_interaction()
 	
 
 
