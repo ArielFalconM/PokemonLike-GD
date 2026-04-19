@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="PokePeru"
-run/main_scene="uid://brbm4iujie5a0"
+run/main_scene="uid://bpfmxswlpqmyn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
 [debug]

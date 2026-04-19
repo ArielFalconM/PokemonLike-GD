@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bpfmxswlpqmyn"]
+
+[ext_resource type="Script" uid="uid://d06n6s7ntuui7" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="FontFile" uid="uid://cenxk08ffqfad" path="res://assets/fonts/PixelOperator8.ttf" id="2_ekxnf"]
+
+[node name="MainMenu" type="Node2D" unique_id=2125181558]
+script = ExtResource("1_l6cm7")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1781262092]
+zoom = Vector2(2, 2)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=847158458]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="Main Scene" type="Button" parent="VBoxContainer" unique_id=632692096]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_ekxnf")
+text = " Play main scene "
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=1686855798]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ekxnf")
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Main Scene" to="." method="_on_main_scene_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
